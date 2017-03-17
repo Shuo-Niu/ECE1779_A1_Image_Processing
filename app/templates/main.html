@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="error">{{error_msg if error_msg != None}}</div>
+    
+    <form action="{{url_for('user_login')}}" method="post">
+        User ID <input type="text" name="userId" /><br/>
+        Password <input type="password" name="password" /><br/>
+        <input type="submit" value="Login" />
+    </form>
+    
+    <form action="{{url_for('user_create')}}" method="get">
+        <input type="submit" value="New User" />
+    </form>
+    
+{% endblock %}

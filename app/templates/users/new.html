@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="error">{{error_msg if error_msg != None}}</div>
+    
+    <form action="{{url_for('user_create_save')}}" method="post">
+        User ID <input type="text" name="userId" value="{{userId if userId != None}}" /><br />
+        Password <input type="password" name="password" value="{{password if password != None}}" /><br />
+        Re-enter Password <input type="password" name="reenter" value="{{reenter if reenter != None}}" /><br />
+        <input type="submit" value="Create New User" />
+    </form>
+    
+    <form action="{{url_for('main')}}" method="get">
+        <input type="submit" value="Back" />
+    </form>
+    
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% for row in images %}
+        <a href="{{url_for('image_trans',id=id,image=row[8:])}}">
+            <img src="{{row}}" alt="{{row}}" height="50"/>
+        </a>
+    {% endfor %}
+    
+    <form action="{{url_for('image_upload',id=id)}}" method="get">
+        <input type="submit" value="Upload" />
+    </form>
+    
+    <form action="{{url_for('main')}}" method="get" onsubmit="return confirm('Confirm: Signing Out?')">
+        <input type="submit" value="Sign Out" />
+    </form>
+    
+{% endblock %}
